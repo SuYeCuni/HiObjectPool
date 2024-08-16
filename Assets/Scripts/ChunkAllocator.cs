@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,11 +17,21 @@ public class ChunkAllocator : Single<ChunkAllocator>
         chunkList = new Dictionary<string, Chunk>();
     }
     
+=======
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ChunkAllocator : Single<ChunkAllocator>
+{
+>>>>>>> 5989ff2e6a0463b93b9d73e4e3bf34a1b9af819d
     /// <summary>
     /// 回收对象
     /// </summary>
     /// <param name="poolName"></param>
     /// <param name="obj"></param>
+<<<<<<< HEAD
     public void Revert(string poolName, Object obj)
     {
         if (IsHavePool(poolName))
@@ -34,6 +45,11 @@ public class ChunkAllocator : Single<ChunkAllocator>
             chunk.ReverObj(obj);
             chunkList.Add(poolName, chunk);
         }
+=======
+    public void Revert(string poolName, object obj)
+    {
+
+>>>>>>> 5989ff2e6a0463b93b9d73e4e3bf34a1b9af819d
     }
 
     /// <summary>
@@ -43,6 +59,7 @@ public class ChunkAllocator : Single<ChunkAllocator>
     /// <returns></returns>
     private Object GetObject(string poolName)
     {
+<<<<<<< HEAD
         if (!IsHavePool(poolName))
         {
             return new Object();
@@ -163,6 +180,9 @@ public class ChunkAllocator : Single<ChunkAllocator>
     private bool IsHavePool(string poolName)
     {
         return chunkList.ContainsKey(poolName);
+=======
+        return new Object();
+>>>>>>> 5989ff2e6a0463b93b9d73e4e3bf34a1b9af819d
     }
 
 }

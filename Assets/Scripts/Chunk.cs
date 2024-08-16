@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 /// <summary>
 /// 对象池
 /// </summary>
@@ -35,4 +36,19 @@ public class Chunk
         objectList.Add(obj);
     }
     
+=======
+public class Chunk : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        ChunkAllocator.Instance
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+>>>>>>> 5989ff2e6a0463b93b9d73e4e3bf34a1b9af819d
 }

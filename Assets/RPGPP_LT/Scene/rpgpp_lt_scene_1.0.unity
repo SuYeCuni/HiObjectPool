@@ -2441,8 +2441,12 @@ MonoBehaviour:
   - {fileID: 1858503379}
   - {fileID: 1822483946}
   number: 50
+<<<<<<< HEAD
   useObjectPool: 0
   useSelf: 0
+=======
+  useObjectPool: 1
+>>>>>>> 5989ff2e6a0463b93b9d73e4e3bf34a1b9af819d
 --- !u!1001 &295016715
 PrefabInstance:
   m_ObjectHideFlags: 0
