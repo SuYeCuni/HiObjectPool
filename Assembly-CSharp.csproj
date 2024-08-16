@@ -41,8 +41,13 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Single.cs" />
+    <Compile Include="Assets\Scripts\ChunkAllocator.cs" />
+    <Compile Include="Assets\Scripts\Chunk.cs" />
     <Compile Include="Assets\Scripts\Food.cs" />
     <Compile Include="Assets\Scripts\FoodManager.cs" />
+    <Compile Include="Assets\Scripts\ResLoad.cs" />
+    <Compile Include="Assets\Scripts\SingleMono.cs" />
     <None Include="Assets\AddOns\Mg3D_Food\Food_ReadMe.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:\xjh\unity\2021.3.41f1c1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
