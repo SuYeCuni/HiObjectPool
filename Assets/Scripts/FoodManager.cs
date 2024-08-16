@@ -11,6 +11,9 @@ public class FoodManager : MonoBehaviour
     
     public bool useObjectPool;
 
+    public bool useSelf;
+
+
     private ObjectPool<GameObject> foodPool;
     // Start is called before the first frame update
     void Start()
@@ -47,12 +50,33 @@ public class FoodManager : MonoBehaviour
                 foodPool.Get();
             }
         }
-        else
+
+        else if(useSelf)
+        {
+            for (int i = 0; i < number; i++)
+            {
+                bool isFirst = false;
+                GameObject food = ChunkAllocator.Instance.GetGameObject("food pool",
+                    foods[Random.Range(0, foods.Length)], out isFirst, transform);
+                food.transform.localPosition = Random.insideUnitSphere;
+                if (isFirst)
+                {
+                    //添加食物脚本并注册销毁事件
+                    food.AddComponent<Food>().destroyEvent.AddListener(() =>
+                    {
+                        ChunkAllocator.Instance.Revert("food pool",food);
+                    });
+                }
+            }
+        }
+        else 
         {
             for (int i = 0; i < number; i++)
             {
                 var food = Instantiate(foods[Random.Range(0, foods.Length)], transform);
                 food.transform.localPosition = Random.insideUnitSphere;
+
+                //添加食物脚本并注册销毁事件
                 food.AddComponent<Food>().destroyEvent.AddListener(() =>
                 {
                     Destroy(food);
